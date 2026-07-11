@@ -6,6 +6,26 @@ Todo con una estética **oscura y personalizada** (azul/dorado para la carga de 
 
 ---
 
+## 📸 Capturas
+
+### Pestaña Datos — carga y edición con validación en vivo
+
+![Pestaña Datos con alumnos cargados](docs/datos-grilla.png)
+
+### Búsqueda en toda la base
+
+![Resultados de búsqueda](docs/datos-busqueda.png)
+
+### Pestaña Estadísticas — gráficos por período
+
+![Estadísticas del mes](docs/estadisticas.png)
+
+### Un día nuevo, listo para cargar
+
+![Pestaña Datos vacía](docs/datos-dia-nuevo.png)
+
+---
+
 ## ✨ Funcionalidades
 
 ### Pestaña **Datos** (carga y edición)
@@ -25,7 +45,7 @@ Todo con una estética **oscura y personalizada** (azul/dorado para la carga de 
 - **Tres gráficos** hechos con LiveCharts2:
   - Barras de alumnos por **localidad**.
   - Barras de alumnos por **rango de edad** (0-29, 30-39, 40-49, 50-59, 60+).
-  - Torta de alumnos por **motivo de ingreso** (Redes / Amigos / Volantes).
+  - Torta de alumnos por **motivo de ingreso** (Redes / Recomendación / Volantes / Otro).
 - **Períodos configurables**: un día puntual, la semana, el mes, los últimos 3 meses o toda la base, con botones que funcionan como interruptores excluyentes.
 
 ---
@@ -42,6 +62,12 @@ Todo con una estética **oscura y personalizada** (azul/dorado para la carga de 
 ---
 
 ## 🚀 Cómo ejecutarlo
+
+### Opción A: descargar el ejecutable (sin instalar nada)
+
+Bajá el `.zip` de la [última release](https://github.com/lauti-g/datos_y_estadisticas/releases/latest), descomprimilo y ejecutá `datos_y_estadisticas.exe`. Es autocontenido: no requiere tener .NET instalado.
+
+### Opción B: compilar desde el código
 
 **Requisitos**: Windows + [SDK de .NET 10](https://dotnet.microsoft.com/download).
 
