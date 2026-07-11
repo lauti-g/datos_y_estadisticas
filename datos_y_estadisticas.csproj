@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+	<ApplicationIcon>logo_lautaro.ico</ApplicationIcon>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <!-- El namespace raíz del proyecto. Lo fijo explícito para que todos los archivos coincidan. -->
+    <RootNamespace>datos_y_estadisticas</RootNamespace>
+    <AssemblyName>datos_y_estadisticas</AssemblyName>
+    <!-- LiveCharts arrastra paquetes empaquetados para .NET Framework (SkiaSharp.Views.WindowsForms,
+         OpenTK). Funcionan en net10-windows vía la capa de compatibilidad, así que silencio NU1701. -->
+    <NoWarn>NU1701</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Acceso a la base de datos SQLite (archivo local alumnos.db). -->
+    <PackageReference Include="ClosedXML" Version="0.105.0" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="10.0.9" />
+    <!-- Gráficos (torta de motivos y barras de localidades). La versión la fija dotnet add package. -->
+    <PackageReference Include="LiveChartsCore.SkiaSharpView.WinForms" Version="2.0.0-rc5.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
