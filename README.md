@@ -100,22 +100,34 @@ Si tu archivo tiene otro orden, se ajusta cambiando las constantes `COL_*` en `I
 
 ## 📁 Estructura del proyecto
 
-El formulario principal actúa de **coordinador**: crea los módulos al arrancar y los conecta entre sí. La lógica pesada vive en clases separadas, cada una con una única responsabilidad:
+El código está organizado **en capas**: cada carpeta agrupa archivos con la misma responsabilidad, y el namespace de cada clase coincide con su carpeta.
+
+```
+datos_y_estadisticas/
+├── Program.cs        → punto de entrada
+├── Modelos/          → las clases de datos
+├── Datos/            → acceso a SQLite y lectura de Excel
+├── Logica/           → reglas puras (sin interfaz)
+└── UI/               → todo lo visual
+    ├── Controles/    → controles a medida con estilo oscuro
+    └── Formularios/  → las ventanas
+```
 
 | Archivo | Responsabilidad |
 |---|---|
-| `Form1.cs` | Coordinador: conecta los módulos y maneja la ventana (barra de título propia, redimensionado) |
-| `Alumno.cs` | El modelo: una fila de la tabla |
-| `RepositorioAlumnos.cs` | Única clase que habla con SQLite (guardar, leer, buscar) |
-| `MaquinaEstadoDatos.cs` | Máquina de estados de la grilla (normal / con cambios / búsqueda) |
-| `Validaciones.cs` | Reglas de validación y normalización (edad, celular, localidad) |
-| `ValidacionGrilla.cs` | Aplica esas reglas sobre la grilla y pinta los errores |
-| `ImportadorExcel.cs` | Diálogo de selección + lectura del Excel |
-| `GraficosEstadisticas.cs` | Todo el dibujo con LiveCharts (si se cambia la librería de gráficos, se toca solo este archivo) |
-| `SelectorModoEstadistica.cs` | Botones Semana/Mes/3 meses/Todo y cálculo de rangos de fechas |
-| `ControladorFechas.cs` | Los dos selectores de fecha, distinguiendo cambios del usuario vs. del código |
-| `Tema.cs` | Paleta de colores centralizada |
-| `DateTimePickerOscuro.cs`, `TabControlOscuro.cs`, `AutoCompletadoOscuro.cs`, `DialogoSalida.cs` | Controles propios con estilo oscuro |
+| `Modelos/Alumno.cs` | El modelo: una fila de la tabla |
+| `Datos/RepositorioAlumnos.cs` | Única clase que habla con SQLite (guardar, leer, buscar) |
+| `Datos/ImportadorExcel.cs` | Diálogo de selección + lectura del Excel |
+| `Logica/Validaciones.cs` | Reglas de validación y normalización (edad, celular, localidad) |
+| `Logica/MaquinaEstadoDatos.cs` | Máquina de estados de la grilla (normal / con cambios / búsqueda) |
+| `UI/Formularios/FormPrincipal.cs` | Coordinador: crea los módulos al arrancar, los conecta entre sí y maneja la ventana (barra de título propia, redimensionado) |
+| `UI/Formularios/DialogoSalida.cs` | Ventana de confirmación al salir con cambios sin guardar |
+| `UI/ValidacionGrilla.cs` | Aplica las reglas de `Validaciones` sobre la grilla y pinta los errores |
+| `UI/GraficosEstadisticas.cs` | Todo el dibujo con LiveCharts (si se cambia la librería de gráficos, se toca solo este archivo) |
+| `UI/SelectorModoEstadistica.cs` | Botones Semana/Mes/3 meses/Todo y cálculo de rangos de fechas |
+| `UI/ControladorFechas.cs` | Los dos selectores de fecha, distinguiendo cambios del usuario vs. del código |
+| `UI/Tema.cs` | Paleta de colores centralizada |
+| `UI/Controles/` | `DateTimePickerOscuro`, `TabControlOscuro` y `AutoCompletadoOscuro`: controles propios con estilo oscuro |
 
 ---
 
