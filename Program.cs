@@ -1,3 +1,5 @@
+using datos_y_estadisticas.UI.Formularios; // acá vive FormPrincipal
+
 namespace datos_y_estadisticas
 {
     internal static class Program
@@ -12,7 +14,7 @@ namespace datos_y_estadisticas
             ApplicationConfiguration.Initialize();
 
             // Arranca la ventana principal.
-            Application.Run(new Form1());
+            Application.Run(new FormPrincipal());
         }
     }
 }

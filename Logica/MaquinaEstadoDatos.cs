@@ -1,4 +1,4 @@
-namespace datos_y_estadisticas
+namespace datos_y_estadisticas.Logica
 {
     // ============================================================
     //  MÁQUINA DE ESTADOS DE LA PESTAÑA DATOS

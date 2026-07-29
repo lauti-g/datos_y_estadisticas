@@ -2,7 +2,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace datos_y_estadisticas
+namespace datos_y_estadisticas.UI.Formularios
 {
     // Ventana de confirmación al salir con cambios sin guardar.
     // Para salir, el usuario tiene que ESCRIBIR "si" (el botón Salir se habilita solo en ese caso)

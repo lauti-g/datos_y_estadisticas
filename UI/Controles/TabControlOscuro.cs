@@ -6,7 +6,7 @@ using System.Drawing.Drawing2D;   // GraphicsState (para guardar/restaurar la ro
 using System.Drawing.Text;        // TextRenderingHint (suavizado del texto)
 using System.Windows.Forms;
 
-namespace datos_y_estadisticas
+namespace datos_y_estadisticas.UI.Controles
 {
     // ============================================================================
     //  TabControlOscuro — solapas VERTICALES a la izquierda, texto rotado
@@ -43,11 +43,11 @@ namespace datos_y_estadisticas
     //
     // OJO IMPORTANTE: con UserPaint activado, el evento DrawItem YA NO SE DISPARA
     // (era parte del mecanismo de dibujo nativo, que acabamos de apagar). Por eso la
-    // lógica de colores que estaba en Form1.tab_DrawItem se mudó acá adentro, al
+    // lógica de colores que estaba en FormPrincipal.tab_DrawItem se mudó acá adentro, al
     // método DibujarSolapa(). Tampoco hace falta DrawMode = OwnerDrawFixed: si quedó
     // esa línea en el Designer, se puede borrar.
     //
-    // CÓMO SE USA (ver Form1.Designer.cs y ConfigurarTabsYEventos en Form1.cs)
+    // CÓMO SE USA (ver FormPrincipal.Designer.cs y ConfigurarTabsYEventos en FormPrincipal.cs)
     // --------------------------------------------------------------------------
     //   tab = new TabControlOscuro();          // en el Designer, en lugar de TabControl
     //   tab.Paletas.Add(...);                  // colores de la solapa 0, luego la 1, etc.
@@ -76,7 +76,7 @@ namespace datos_y_estadisticas
 
         // Una paleta por solapa, EN ORDEN: Paletas[0] es la primera solapa, [1] la segunda...
         // En esta app: 0 = Datos (azul/dorado), 1 = Estadísticas (rojo/gris). Se llenan
-        // desde Form1 para que los colores sigan viviendo en un solo lugar (la clase Tema).
+        // desde FormPrincipal para que los colores sigan viviendo en un solo lugar (la clase Tema).
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public List<PaletaSolapa> Paletas { get; } = new();

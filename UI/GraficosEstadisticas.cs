@@ -1,10 +1,11 @@
+using datos_y_estadisticas.Modelos;            // la clase Alumno
 using LiveChartsCore;                          // ISeries
 using LiveChartsCore.SkiaSharpView;            // ColumnSeries, PieSeries, Axis
 using LiveChartsCore.SkiaSharpView.Painting;   // SolidColorPaint
 using LiveChartsCore.SkiaSharpView.WinForms;   // CartesianChart, PieChart
 using SkiaSharp;                               // SKColor
 
-namespace datos_y_estadisticas
+namespace datos_y_estadisticas.UI
 {
     // ============================================================
     //  GRÁFICOS DE LA PESTAÑA ESTADÍSTICAS (LiveCharts2)

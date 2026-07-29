@@ -1,7 +1,7 @@
 using System.Globalization;
 using System.Linq;
 
-namespace datos_y_estadisticas
+namespace datos_y_estadisticas.Logica
 {
     // Reúne en un solo lugar las reglas de validación y normalización de los datos.
     // Así la grilla, el guardado y el marcado de errores usan EXACTAMENTE la misma lógica.

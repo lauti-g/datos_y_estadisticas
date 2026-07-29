@@ -1,6 +1,6 @@
 using System;
 
-namespace datos_y_estadisticas
+namespace datos_y_estadisticas.Modelos
 {
     // Representa una fila de la tabla: un alumno cargado en una fecha determinada.
     // Es el "molde" que viaja entre la grilla, la base de datos y las estadísticas.

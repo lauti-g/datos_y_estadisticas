@@ -1,9 +1,10 @@
+using datos_y_estadisticas.Modelos; // la clase Alumno (el "molde" que devuelve la base)
 using Microsoft.Data.Sqlite; // herramientas para hablar con SQLite
 using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace datos_y_estadisticas
+namespace datos_y_estadisticas.Datos
 {
     // Única clase que sabe cómo guardar y leer de la base.
     // El resto del programa le pide datos sin saber qué pasa por dentro.

@@ -1,6 +1,10 @@
 using System.Runtime.InteropServices;
+using datos_y_estadisticas.Datos;        // RepositorioAlumnos e ImportadorExcel
+using datos_y_estadisticas.Logica;       // MaquinaEstadoDatos y Validaciones
+using datos_y_estadisticas.Modelos;      // la clase Alumno
+using datos_y_estadisticas.UI.Controles; // AutocompletadoOscuro y demás controles a medida
 
-namespace datos_y_estadisticas
+namespace datos_y_estadisticas.UI.Formularios
 {
     // El formulario quedó como COORDINADOR: crea los módulos en el arranque,
     // los conecta entre sí y maneja lo que es puramente de la ventana (barra
@@ -19,7 +23,7 @@ namespace datos_y_estadisticas
     //                                cuando el cambio vino del usuario).
     //   - ImportadorExcel         -> elegir y leer el archivo de Excel.
     //   - RepositorioAlumnos      -> la base de datos (ya existía).
-    public partial class Form1 : Form
+    public partial class FormPrincipal : Form
     {
         // ---------- Módulos entre los que se repartió la lógica ----------
         private RepositorioAlumnos repositorio = null!;        // capa de base de datos
@@ -51,7 +55,7 @@ namespace datos_y_estadisticas
         // de edición cada vez que entramos a editar la columna Localidad.
         private AutocompletadoOscuro autoLocalidad = null!;
 
-        public Form1()
+        public FormPrincipal()
         {
             InitializeComponent();
         }
@@ -64,7 +68,7 @@ namespace datos_y_estadisticas
         // ============================================================
         //  ARRANQUE
         // ============================================================
-        private void Form1_Load(object sender, EventArgs e)
+        private void FormPrincipal_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Normal;
 
@@ -547,7 +551,7 @@ namespace datos_y_estadisticas
         // ============================================================
         //  CIERRE DE LA APP
         // ============================================================
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        private void FormPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             // Si no hay cambios pendientes, dejo cerrar sin molestar.
             if (!estado.HayCambiosSinGuardar) return;
@@ -882,7 +886,7 @@ namespace datos_y_estadisticas
         // es un campo y no una constante: tiene que ser EL MISMO número en los dos.
         private int grosorMarco;
 
-        // Deja la ventana lista para redimensionar. Se llama UNA vez, desde Form1_Load.
+        // Deja la ventana lista para redimensionar. Se llama UNA vez, desde FormPrincipal_Load.
         private void ConfigurarRedimensionado()
         {
             // 8 px "lógicos" convertidos a píxeles reales según la escala de Windows

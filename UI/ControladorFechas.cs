@@ -1,4 +1,7 @@
-namespace datos_y_estadisticas
+using datos_y_estadisticas.Logica;       // MaquinaEstadoDatos (la compuerta de carga)
+using datos_y_estadisticas.UI.Controles; // DateTimePickerOscuro
+
+namespace datos_y_estadisticas.UI
 {
     // ============================================================
     //  CONTROLADOR DE LOS DOS SELECTORES DE FECHA (DateTimePicker)
@@ -12,7 +15,7 @@ namespace datos_y_estadisticas
     //
     //   2) El truco de cambiar la fecha POR CÓDIGO sin disparar el evento
     //      ValueChanged. Antes era el patrón repetido "cargando = true;
-    //      dtp.Value = X; cargando = false;" desparramado por Form1; ahora
+    //      dtp.Value = X; cargando = false;" desparramado por FormPrincipal; ahora
     //      son los métodos FijarFechaDatos / FijarFechaEstadisticas, que
     //      usan la compuerta de carga de la máquina de estados.
     //

@@ -1,6 +1,6 @@
 using System.Globalization;
 
-namespace datos_y_estadisticas
+namespace datos_y_estadisticas.UI
 {
     // ============================================================
     //  SELECTOR DE MODO DE LAS ESTADÍSTICAS (Semana / Mes / 3 meses / Todo)
@@ -12,7 +12,7 @@ namespace datos_y_estadisticas
     // (toggle) EXCLUYENTES: prender uno apaga a los demás, y volver a tocar
     // el que está prendido lo apaga (se vuelve al modo "día").
     //
-    // Esta clase concentra TODO lo que antes estaba repartido en Form1:
+    // Esta clase concentra TODO lo que antes estaba repartido en FormPrincipal:
     //   1) El modo activo (el enum de abajo).
     //   2) Los clics de los cuatro botones (se suscribe sola en el constructor,
     //      por eso ya no hace falta cablearlos en el diseñador).
@@ -55,7 +55,7 @@ namespace datos_y_estadisticas
 
             // Cada botón alterna su propio modo. Como los cuatro clics hacen lo
             // mismo cambiando solo el modo, con una lambda por botón alcanza
-            // (antes eran cuatro métodos casi idénticos en Form1).
+            // (antes eran cuatro métodos casi idénticos en FormPrincipal).
             btnSemana.Click += (s, e) => Alternar(ModoEstadistica.Semana);
             btnMes.Click += (s, e) => Alternar(ModoEstadistica.Mes);
             btnTresMeses.Click += (s, e) => Alternar(ModoEstadistica.TresMeses);

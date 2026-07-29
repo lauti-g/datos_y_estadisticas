@@ -1,6 +1,8 @@
-namespace datos_y_estadisticas
+using datos_y_estadisticas.UI.Controles; // TabControlOscuro y DateTimePickerOscuro
+
+namespace datos_y_estadisticas.UI.Formularios
 {
-    partial class Form1
+    partial class FormPrincipal
     {
         /// <summary>
         ///  Variable del diseñador (no tocar).
@@ -23,11 +25,11 @@ namespace datos_y_estadisticas
 
         /// <summary>
         ///  Construye todos los controles del formulario.
-        ///  (Los gráficos LiveCharts se agregan por código en Form1.cs.)
+        ///  (Los gráficos LiveCharts se agregan por código en FormPrincipal.cs.)
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             tab = new TabControlOscuro();
             tabDatos = new TabPage();
             tabla = new DataGridView();
@@ -535,7 +537,7 @@ namespace datos_y_estadisticas
             PanelContenedor.Size = new Size(1093, 590);
             PanelContenedor.TabIndex = 2;
             // 
-            // Form1
+            // FormPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -544,10 +546,10 @@ namespace datos_y_estadisticas
             Controls.Add(PanelTop);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "Form1";
+            Name = "FormPrincipal";
             Text = "Datos y Estadísticas";
-            FormClosing += Form1_FormClosing;
-            Load += Form1_Load;
+            FormClosing += FormPrincipal_FormClosing;
+            Load += FormPrincipal_Load;
             tab.ResumeLayout(false);
             tabDatos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)tabla).EndInit();

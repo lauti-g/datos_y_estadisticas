@@ -1,6 +1,6 @@
 using System.Drawing;
 
-namespace datos_y_estadisticas
+namespace datos_y_estadisticas.UI
 {
     // Paleta de colores centralizada para mantener una estética coherente y elegante.
     // Todo es oscuro. La pestaña "Datos" usa azul + dorado + blanco;

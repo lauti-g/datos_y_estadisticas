@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace datos_y_estadisticas
+namespace datos_y_estadisticas.UI.Controles
 {
     // DateTimePicker con estética propia (oscura), incluido el CALENDARIO desplegable.
     //

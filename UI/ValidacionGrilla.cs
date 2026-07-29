@@ -1,4 +1,6 @@
-namespace datos_y_estadisticas
+using datos_y_estadisticas.Logica; // las reglas puras (Validaciones)
+
+namespace datos_y_estadisticas.UI
 {
     // ============================================================
     //  VALIDACIÓN Y NORMALIZACIÓN DE LA GRILLA
@@ -14,7 +16,7 @@ namespace datos_y_estadisticas
     //                            mal cargadas, arma los mensajes de error
     //                            y normaliza (capitaliza, formatea) lo tipeado.
     //
-    // Antes todo esto vivía en Form1. Al separarlo, el formulario solo
+    // Antes todo esto vivía en FormPrincipal. Al separarlo, el formulario solo
     // pregunta "¿está todo bien?" y este módulo se encarga del cómo.
     //
     // Es 'static' porque no guarda estado (igual que Validaciones): son

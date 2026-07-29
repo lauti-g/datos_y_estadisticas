@@ -1,8 +1,10 @@
 ﻿using ClosedXML.Excel;          // librería para leer/escribir Excel (.xlsx). Se instala con NuGet.
+using datos_y_estadisticas.Logica;  // las reglas de Validaciones (capitalizar, formatear celular)
+using datos_y_estadisticas.Modelos; // la clase Alumno
 using System;
 using System.Collections.Generic;
 
-namespace datos_y_estadisticas
+namespace datos_y_estadisticas.Datos
 {
     // Clase dedicada a UNA sola cosa: leer un archivo Excel y devolver la lista de
     // alumnos que contiene. No toca la base ni la interfaz; solo "traduce" el Excel
@@ -14,7 +16,7 @@ namespace datos_y_estadisticas
     public static class ImportadorExcel
     {
         // ---- Posición de cada dato en el Excel (1 = columna A, 2 = B, 3 = C...) ----
-        // Las dejo como constantes con nombre, igual que las COL_* de la grilla en Form1,
+        // Las dejo como constantes con nombre, igual que las COL_* de la grilla en FormPrincipal,
         // para no usar números sueltos y para que cambiar el orden sea trivial.
         // OJO: este orden DEBE coincidir con cómo está armado tu Excel. Si tu archivo
         // tiene las columnas en otro orden (o columnas de más en el medio), ajustá SOLO
@@ -33,7 +35,7 @@ namespace datos_y_estadisticas
         // Maneja TODO el ida y vuelta con el usuario para importar un Excel:
         // abre el cuadro de "elegir archivo", lee los alumnos y muestra los
         // carteles de error o de "no había nada". Antes todo esto vivía en el
-        // clic del botón en Form1; ahora el formulario solo hace:
+        // clic del botón en FormPrincipal; ahora el formulario solo hace:
         //
         //     var importados = ImportadorExcel.ImportarConDialogo(this);
         //     if (importados == null) return;   // canceló, falló o venía vacío

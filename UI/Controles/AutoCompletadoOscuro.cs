@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace datos_y_estadisticas
+namespace datos_y_estadisticas.UI.Controles
 {
     // ============================================================================
     //  AutocompletadoOscuro — desplegable de sugerencias con estética propia
@@ -41,7 +41,7 @@ namespace datos_y_estadisticas
     //     color del texto, color del renglón elegido, la sangría, el ALTO de cada
     //     renglón y la fuente.
     //
-    // CÓMO SE USA (ver Form1.cs)
+    // CÓMO SE USA (ver FormPrincipal.cs)
     // -------------------------
     //   autoLocalidad = new AutocompletadoOscuro(() => localidadesSugeridas);
     //   ... y en EditingControlShowing:  autoLocalidad.Conectar(tb) / .Desconectar()
