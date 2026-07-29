@@ -127,7 +127,7 @@ datos_y_estadisticas/
 | `UI/SelectorModoEstadistica.cs` | Botones Semana/Mes/3 meses/Todo y cálculo de rangos de fechas |
 | `UI/ControladorFechas.cs` | Los dos selectores de fecha, distinguiendo cambios del usuario vs. del código |
 | `UI/Tema.cs` | Paleta de colores centralizada |
-| `UI/Controles/` | `DateTimePickerOscuro`, `TabControlOscuro` y `AutoCompletadoOscuro`: controles propios con estilo oscuro |
+| `UI/Controles/` | `DateTimePickerOscuro`, `TabControlOscuro` y `AutocompletadoOscuro`: controles propios con estilo oscuro |
 
 ---
 
